@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "PhotoCloud.MetadataSaver": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7180",
+      "launchBrowser": false
+    }
+  }
+}

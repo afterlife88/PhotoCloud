@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoCloud.Locator", "PhotoCloud.Locator\PhotoCloud.Locator.csproj", "{C6B365BE-5290-49F3-9A59-98C73052502A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoCloud.Uploader", "PhotoCloud.Uploader\PhotoCloud.Uploader.csproj", "{875E96C3-4659-4BDD-819C-41F3403E1075}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoCloud.MetadataSaver", "PhotoCloud.MetadataSaver\PhotoCloud.MetadataSaver.csproj", "{95CBD7F2-081C-48BC-B052-4C512D1A7F46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoCloud.Infrastructure.Utils", "PhotoCloud.Infrastructure.Utils\PhotoCloud.Infrastructure.Utils.csproj", "{939DBCE2-429C-47E3-9E6C-FD9E6FDB5AFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6B365BE-5290-49F3-9A59-98C73052502A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B365BE-5290-49F3-9A59-98C73052502A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B365BE-5290-49F3-9A59-98C73052502A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B365BE-5290-49F3-9A59-98C73052502A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{875E96C3-4659-4BDD-819C-41F3403E1075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{875E96C3-4659-4BDD-819C-41F3403E1075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{875E96C3-4659-4BDD-819C-41F3403E1075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{875E96C3-4659-4BDD-819C-41F3403E1075}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95CBD7F2-081C-48BC-B052-4C512D1A7F46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95CBD7F2-081C-48BC-B052-4C512D1A7F46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95CBD7F2-081C-48BC-B052-4C512D1A7F46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95CBD7F2-081C-48BC-B052-4C512D1A7F46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{939DBCE2-429C-47E3-9E6C-FD9E6FDB5AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{939DBCE2-429C-47E3-9E6C-FD9E6FDB5AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{939DBCE2-429C-47E3-9E6C-FD9E6FDB5AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{939DBCE2-429C-47E3-9E6C-FD9E6FDB5AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
