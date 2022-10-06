@@ -16,6 +16,6 @@ The client side is developed on mobile (iOS), you should develop the server side
 - There are 200 threads allocated to the HTTP server
 
 ## Architecture Design with HTTP communication between microservices 
-![img.png](img.png)
+![http.png](http.png)
 ## Architecture Design with async communication between microservices using Service Bus
-![img_1.png](img_1.png)
+![service-bus](service-bus.png)
