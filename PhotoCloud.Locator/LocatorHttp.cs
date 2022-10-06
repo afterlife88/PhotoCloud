@@ -4,7 +4,6 @@ using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using PhotoCloud.Infrastructure.Utils;
-using PhotoCloud.Infrastructure.Utils.Messages;
 
 namespace PhotoCloud.Locator;
 
@@ -29,23 +28,5 @@ public sealed class LocatorFunctions
         await response.WriteAsJsonAsync(new LocatorResponse(new Location(51.5074m, 0.1278m)));
 
         return response;
-    }
-    [Function("extractLocationMessage")]
-    [ServiceBusOutput("photoslocation", Connection = "ServiceBusConnectionString")]
-    public string ExtractLocation(
-        [ServiceBusTrigger("photos", "Locator", Connection = "ServiceBusConnectionString")]
-        string message,
-        FunctionContext functionContext)
-    {
-        var photoMessage = System.Text.Json.JsonSerializer.Deserialize<PhotoMessage>(message)!;
-        var logger = functionContext.GetLogger<LocatorFunctions>();
-        logger.LogInformation("Locator msvc - Message received: Picture blob Url: {BlobUrl}", photoMessage!.BlobUrl);
-
-        // Simulate lookup for GPS
-        Thread.Sleep(2000);
-
-        var locationMessage = new PhotoLocationMessage(photoMessage.PictureId, new Location(51.5074m, 0.1278m));
-        var payload = System.Text.Json.JsonSerializer.Serialize(locationMessage);
-        return payload;
     }
 }

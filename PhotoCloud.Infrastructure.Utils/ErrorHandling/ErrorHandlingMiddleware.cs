@@ -3,7 +3,7 @@ using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Azure.Functions.Worker.Middleware;
 using Microsoft.Extensions.Logging;
 
-namespace PhotoCloud.Infrastructure.Utils;
+namespace PhotoCloud.Infrastructure.Utils.ErrorHandling;
 
 public class ErrorHandlingMiddleware : IFunctionsWorkerMiddleware
 {

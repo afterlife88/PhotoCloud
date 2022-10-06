@@ -1,4 +1,4 @@
-namespace PhotoCloud.Infrastructure.Utils;
+namespace PhotoCloud.Infrastructure.Utils.ErrorHandling;
 
 public class ErrorResult
 {

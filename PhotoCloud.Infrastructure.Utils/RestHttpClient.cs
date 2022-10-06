@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
+using PhotoCloud.Infrastructure.Utils.ErrorHandling;
 
 namespace PhotoCloud.Infrastructure.Utils;
 

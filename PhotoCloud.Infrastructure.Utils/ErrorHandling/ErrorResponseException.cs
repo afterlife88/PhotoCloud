@@ -2,7 +2,7 @@ using System.Net;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 
-namespace PhotoCloud.Infrastructure.Utils;
+namespace PhotoCloud.Infrastructure.Utils.ErrorHandling;
 
 public class ErrorResponseException : Exception
 {
