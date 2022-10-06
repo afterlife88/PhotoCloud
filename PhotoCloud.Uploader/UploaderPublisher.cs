@@ -32,7 +32,7 @@ public class UploaderPublisher
 
         var sender = serviceBusClient.CreateSender("photos");
         var photoMessage = new PhotoMessage(blobUrl, author, title, pictureId);
-
+        // var testNewObj 
         var payload = JsonSerializer.Serialize(photoMessage);
 
         var message = new ServiceBusMessage(payload);

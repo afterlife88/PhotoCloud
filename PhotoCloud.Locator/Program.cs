@@ -4,8 +4,9 @@ using PhotoCloud.Infrastructure.Utils;
 using PhotoCloud.Infrastructure.Utils.ErrorHandling;
 
 var host = new HostBuilder()
-    .ConfigureFunctionsWorkerDefaults(
-        options => { options.UseMiddleware<ErrorHandlingMiddleware>(); })
+    .ConfigureFunctionsWorkerDefaults()
+    // Commented out for deadlettering
+    // options => { options.UseMiddleware<ErrorHandlingMiddleware>(); })
     .ConfigureServices(s => { s.AddHttpClient(); })
     .Build();
 

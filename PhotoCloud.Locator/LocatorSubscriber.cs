@@ -11,11 +11,13 @@ public class LocatorSubscriber
     public string ExtractLocation(
         [ServiceBusTrigger("photos", "Locator", Connection = "ServiceBusConnectionString")]
         string message,
-        FunctionContext functionContext)
+        FunctionContext executionContext)
     {
-        var photoMessage = System.Text.Json.JsonSerializer.Deserialize<PhotoMessage>(message)!;
-        var logger = functionContext.GetLogger<LocatorSubscriber>();
-        logger.LogInformation("Locator msvc - Message received: Picture blob Url: {BlobUrl}", photoMessage!.BlobUrl);
+        var photoMessage =
+            System.Text.Json.JsonSerializer.Deserialize<PhotoMessage>(message);
+        var logger = executionContext.GetLogger<LocatorSubscriber>();
+        logger.LogInformation("Locator msvc - Message received: Picture blob Url: {BlobUrl}",
+            photoMessage!.BlobUrl);
 
         // Simulate lookup for GPS
         Thread.Sleep(2000);
