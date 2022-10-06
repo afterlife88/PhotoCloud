@@ -1,6 +1,6 @@
-using HttpClients;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PhotoCloud.Infrastructure.Utils;
 
 var host = new HostBuilder()
     .ConfigureFunctionsWorkerDefaults(

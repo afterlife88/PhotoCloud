@@ -2,7 +2,7 @@
 using System.Text;
 using System.Text.Json;
 
-namespace HttpClients;
+namespace PhotoCloud.Infrastructure.Utils;
 
 public class RestHttpClient : IDisposable
 {

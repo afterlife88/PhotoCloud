@@ -1,4 +1,4 @@
-namespace HttpClients;
+namespace PhotoCloud.Infrastructure.Utils;
 
 public record LocatorRequest(string BlobUrl);
 

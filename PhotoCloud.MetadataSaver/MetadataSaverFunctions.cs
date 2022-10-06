@@ -1,9 +1,9 @@
 using System.Net;
 using System.Text.Json;
-using HttpClients;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
+using PhotoCloud.Infrastructure.Utils;
 
 namespace PhotoCloud.MetadataSaver;
 

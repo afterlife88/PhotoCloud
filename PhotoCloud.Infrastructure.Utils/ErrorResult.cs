@@ -1,19 +1,15 @@
-namespace HttpClients;
+namespace PhotoCloud.Infrastructure.Utils;
 
 public class ErrorResult
 {
-    public string RequestId { get; set; }
+    public string RequestId { get; set; } = null!;
 
-    public IEnumerable<string> Errors { get; set; } = Array.Empty<string>();
+    public IEnumerable<string> Errors { get; set; }
 
     public ErrorResult(IEnumerable<string> errors, string requestId)
     {
         Errors = errors;
         RequestId = requestId;
-    }
-
-    public ErrorResult()
-    {
     }
 
     public ErrorResult(string error) => Errors = new string[1]

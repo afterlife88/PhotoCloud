@@ -1,11 +1,12 @@
 using System.Net;
 using System.Text.Json;
 using Azure.Messaging.ServiceBus;
-using HttpClients;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
+using PhotoCloud.Infrastructure.Utils;
+using PhotoCloud.Infrastructure.Utils.Messages;
 
 namespace PhotoCloud.Uploader;
 

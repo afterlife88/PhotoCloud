@@ -1,10 +1,9 @@
-using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Azure.Functions.Worker.Middleware;
 using Microsoft.Extensions.Logging;
 
-namespace HttpClients;
+namespace PhotoCloud.Infrastructure.Utils;
 
 public class ErrorHandlingMiddleware : IFunctionsWorkerMiddleware
 {

@@ -1,6 +1,6 @@
 using Azure.Messaging.ServiceBus.Administration;
 
-namespace HttpClients;
+namespace PhotoCloud.Infrastructure.Utils;
 
 public static class ServiceBusConfiguration
 {
