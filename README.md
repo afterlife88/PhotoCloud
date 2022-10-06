@@ -18,4 +18,4 @@ The client side is developed on mobile (iOS), you should develop the server side
 ## Architecture Design with HTTP communication between microservices 
 ![http.png](http.png)
 ## Architecture Design with async communication between microservices using Service Bus
-![service-bus](service-bus.png)
+![service-bus.png](service-bus.png)
