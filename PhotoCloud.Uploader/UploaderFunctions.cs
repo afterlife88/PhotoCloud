@@ -1,10 +1,8 @@
 using System.Net;
 using System.Text.Json;
-using Azure.Messaging.ServiceBus;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
-using Microsoft.Extensions.Logging;
 using PhotoCloud.Infrastructure.Utils;
 
 namespace PhotoCloud.Uploader;
@@ -24,14 +22,12 @@ public sealed class UploaderFunctions
     public async Task<HttpResponseData> Run(
         [HttpTrigger(AuthorizationLevel.Anonymous, "get")]
         HttpRequestData req,
-        ILogger log,
         FunctionContext _)
     {
         var queryDictionary = QueryHelpers.ParseQuery(req.Url.Query);
 
         var author = queryDictionary["author"];
         var title = queryDictionary["title"];
-        // var deviceId = queryDictionary["deviceId"];
 
         // Simulate blob upload
         Thread.Sleep(1000);

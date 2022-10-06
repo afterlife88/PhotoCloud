@@ -14,7 +14,7 @@ public class LocatorSubscriber
         FunctionContext functionContext)
     {
         var photoMessage = System.Text.Json.JsonSerializer.Deserialize<PhotoMessage>(message)!;
-        var logger = functionContext.GetLogger<LocatorFunctions>();
+        var logger = functionContext.GetLogger<LocatorSubscriber>();
         logger.LogInformation("Locator msvc - Message received: Picture blob Url: {BlobUrl}", photoMessage!.BlobUrl);
 
         // Simulate lookup for GPS

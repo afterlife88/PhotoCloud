@@ -7,7 +7,7 @@ using PhotoCloud.Infrastructure.Utils;
 
 namespace PhotoCloud.MetadataSaver;
 
-public sealed class MetadataSaverFunctions
+public sealed class MetadataSaverHttp
 {
     [Function("saveMetadata")]
     public async Task<HttpResponseData> Run(
@@ -18,7 +18,7 @@ public sealed class MetadataSaverFunctions
     {
         var metadataRequest = await JsonSerializer.DeserializeAsync<MetadataRequest>(request.Body);
 
-        var logger = functionContext.GetLogger<MetadataSaverFunctions>();
+        var logger = functionContext.GetLogger<MetadataSaverHttp>();
         logger.LogInformation("Request received Author: " +
                               "{Author}, Title: {MetadataRequestTitle}, " +
                               "Latitude: {LocationLatitude}, " +

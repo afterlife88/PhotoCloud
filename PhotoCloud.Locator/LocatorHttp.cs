@@ -7,7 +7,7 @@ using PhotoCloud.Infrastructure.Utils;
 
 namespace PhotoCloud.Locator;
 
-public sealed class LocatorFunctions
+public sealed class LocatorHttp
 {
 
     [Function("extractLocation")]
@@ -18,7 +18,7 @@ public sealed class LocatorFunctions
         FunctionContext functionContext)
     {
         var locatorRequest = await System.Text.Json.JsonSerializer.DeserializeAsync<LocatorRequest>(request.Body);
-        var logger = functionContext.GetLogger<LocatorFunctions>();
+        var logger = functionContext.GetLogger<LocatorHttp>();
         logger.LogInformation("Locator msvc - Request received: Picture blob Url: {BlobUrl}", locatorRequest!.BlobUrl);
 
         // Simulate lookup for GPS
