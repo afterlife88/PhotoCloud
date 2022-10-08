@@ -1,45 +1,56 @@
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
-using PhotoCloud.Infrastructure.Utils;
 
 namespace PhotoCloud.MetadataSaver;
 
 public class MetadataSaverSubscriber
 {
+    /// <summary>
+    /// Handler for metadata saver subscription.
+    /// </summary>
+    /// <param name="message"></param>
+    /// <param name="functionContext"></param>
     [Function("savePhotoMetadata")]
     public void SaveMetadata(
-        [ServiceBusTrigger("photos", "MetadataSaver", Connection = "ServiceBusConnectionString")]
+        [ServiceBusTrigger("", "", Connection = "ServiceBusConnectionString")]
         string message,
         FunctionContext functionContext)
     {
-        var photoMessage = System.Text.Json.JsonSerializer.Deserialize<PhotoMessage>(message)!;
+        // TODO: Implement me here
+        // Insert the topic name and subscription name into the ServiceBusTrigger attribute of function app above
+        // Read the message deserialize it to PhotoMessage and log the fields to logger
+        // As we not store anything, log the message to console will be enough
         var logger = functionContext.GetLogger<MetadataSaverSubscriber>();
-        logger.LogInformation(
-            "Metadata saver - Message received: Picture blob Url: {BlobUrl}, picID: {PictureId}, author {Author}, title: {Title}",
-            photoMessage!.BlobUrl,
-            photoMessage.PictureId, photoMessage.Author, photoMessage.Title);
-
-        // Simulate save
+        // logger.LogInformation();
+        
+        
+        // Just simulating save operation
         Thread.Sleep(500);
     }
 
+    /// <summary>
+    /// Handler for queue
+    /// </summary>
+    /// <param name="message"></param>
+    /// <param name="functionContext"></param>
     [Function("saveLocation")]
     public void SaveLocation(
-        [ServiceBusTrigger("photoslocation", Connection = "ServiceBusConnectionString")]
+        [ServiceBusTrigger("", Connection = "ServiceBusConnectionString")]
         string message,
         FunctionContext functionContext)
     {
-        var photoLocationMessage = System.Text.Json.JsonSerializer.Deserialize<PhotoLocationMessage>(message)!;
+        // TODO: Implement me here
+        // Insert the queue name into the ServiceBusTrigger attribute above
+        // Read the message deserialize it to PhotoLocationMessage and log the fields to logger
+        // As we not store anything, log the message to console will be enough
         var logger = functionContext.GetLogger<MetadataSaverSubscriber>();
-        logger.LogInformation(
-            "Metadata saver - Location Message received: Picture id: {Id}, Longitude: {Longitude}, Latitude {Latitude}",
-            photoLocationMessage.PictureId, photoLocationMessage.Location.Latitude,
-            photoLocationMessage.Location.Longitude);
+        // logger.LogInformation();
 
+        // Simulate save
         // NO SQL case - upsert (by having picture ID) json doc for photo extending with object of location by having upsert 
         // SQL case - insert into separated table with picture id (NO CONSTRAINTS of course) , Longitude,  Latitude
 
-        // Simulate save
+        // Just simulating save operation
         Thread.Sleep(500);
     }
 }

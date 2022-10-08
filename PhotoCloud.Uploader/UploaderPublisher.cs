@@ -35,15 +35,12 @@ public class UploaderPublisher
         var pictureId = Guid.NewGuid().ToString();
 
         var serviceBusClient = new ServiceBusClient(_configuration.GetConnectionString("ServiceBusConnectionString"));
-        var sender = serviceBusClient.CreateSender("photos");
-        var photoMessage = new PhotoMessage(blobUrl, author, title, pictureId);
-        // var testNewObj 
-        var payload = JsonSerializer.Serialize(photoMessage);
 
-        var message = new ServiceBusMessage(payload);
-        await sender.SendMessageAsync(message);
-
-        await sender.CloseAsync();
+        // TODO: 
+        // Find from msdn documentation how to create a message and sends to photos topic
+        // You should send a message with the following structure: { "pictureId": "pictureId", "blobUrl": "blobUrl", "author": "author", "title": "title" }
+        // Use PhotoMessage class to serialize the message
+        // Create instance of PhotoMessage class and set the properties, use author and title from the query string
 
         var response = req.CreateResponse(HttpStatusCode.Created);
         await response.WriteAsJsonAsync(new { blobUrl, pictureId });
