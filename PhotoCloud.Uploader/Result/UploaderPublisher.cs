@@ -1,12 +1,3 @@
-using System.Net;
-using System.Text.Json;
-using Azure.Messaging.ServiceBus;
-using Microsoft.AspNetCore.WebUtilities;
-using Microsoft.Azure.Functions.Worker;
-using Microsoft.Azure.Functions.Worker.Http;
-using Microsoft.Extensions.Configuration;
-using PhotoCloud.Infrastructure.Utils;
-
 namespace PhotoCloud.Uploader.Result;
 
 // public class UploaderPublisher
