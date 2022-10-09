@@ -8,12 +8,12 @@ using PhotoCloud.Infrastructure.Utils;
 
 namespace PhotoCloud.Uploader;
 
-public sealed class UploaderFunctions
+public sealed class UploaderHttp
 {
     private readonly RestHttpClient _httpClient;
     private readonly IConfiguration _configuration;
 
-    public UploaderFunctions(IHttpClientFactory httpClientFactory, IConfiguration configuration)
+    public UploaderHttp(IHttpClientFactory httpClientFactory, IConfiguration configuration)
     {
         _configuration = configuration;
         _httpClient = new RestHttpClient(httpClientFactory.CreateClient(), new JsonSerializerOptions());
