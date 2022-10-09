@@ -1,6 +1,6 @@
 namespace PhotoCloud.Locator.Result;
 
-// public class LocatorSubscriber
+// public sealed class LocatorSubscriber
 // {
 //     [Function("extractLocationMessage")]
 //     [ServiceBusOutput("photoslocation", Connection = "ServiceBusConnectionString")]

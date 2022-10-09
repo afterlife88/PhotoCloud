@@ -9,7 +9,7 @@ using PhotoCloud.Infrastructure.Utils;
 
 namespace PhotoCloud.Uploader;
 
-public class UploaderPublisher
+public sealed class UploaderPublisher
 {
     private readonly IConfiguration _configuration;
 

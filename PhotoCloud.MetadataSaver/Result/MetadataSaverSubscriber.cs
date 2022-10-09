@@ -1,6 +1,6 @@
 namespace PhotoCloud.MetadataSaver.Result;
 
-// public class MetadataSaverSubscriber
+// public sealed class MetadataSaverSubscriber
 // {
 //     [Function("savePhotoMetadata")]
 //     public void SaveMetadata(

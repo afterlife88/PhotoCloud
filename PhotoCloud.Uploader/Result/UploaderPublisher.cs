@@ -1,6 +1,6 @@
 namespace PhotoCloud.Uploader.Result;
 
-// public class UploaderPublisher
+// public sealed class UploaderPublisher
 // {
 //     private readonly IConfiguration _configuration;
 //

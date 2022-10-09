@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 
 namespace PhotoCloud.MetadataSaver;
 
-public class MetadataSaverSubscriber
+public sealed class MetadataSaverSubscriber
 {
     /// <summary>
     /// Handler for metadata saver subscription.
