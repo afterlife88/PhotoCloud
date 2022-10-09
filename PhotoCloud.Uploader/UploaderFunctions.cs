@@ -3,6 +3,7 @@ using System.Text.Json;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.Extensions.Configuration;
 using PhotoCloud.Infrastructure.Utils;
 
 namespace PhotoCloud.Uploader;
@@ -10,11 +11,11 @@ namespace PhotoCloud.Uploader;
 public sealed class UploaderFunctions
 {
     private readonly RestHttpClient _httpClient;
-    private const string MetadataServiceEndpointUrl = "http://localhost:7180/api/saveMetadata";
-    private const string LocatorServiceEndpointUrl = " http://localhost:7040/api/extractLocation";
+    private readonly IConfiguration _configuration;
 
-    public UploaderFunctions(IHttpClientFactory httpClientFactory)
+    public UploaderFunctions(IHttpClientFactory httpClientFactory, IConfiguration configuration)
     {
+        _configuration = configuration;
         _httpClient = new RestHttpClient(httpClientFactory.CreateClient(), new JsonSerializerOptions());
     }
 
@@ -36,13 +37,13 @@ public sealed class UploaderFunctions
         // Simulate call to locator extractor 
         var responseLocator =
             await _httpClient.PostAsync<LocatorRequest, LocatorResponse>(
-                LocatorServiceEndpointUrl,
+                _configuration["LocatorServiceEndpointUrl"],
                 new LocatorRequest(blobUrl));
 
         // Simulate call to metadata saver
         var responseMetadataSaver =
             await _httpClient.PostAsync<MetadataRequest, MetadataResponse>(
-                MetadataServiceEndpointUrl,
+                _configuration["MetadataServiceEndpointUrl"],
                 new MetadataRequest(title, author, new DateTimeOffset(DateTime.UtcNow), responseLocator.Location,
                     blobUrl));
 
@@ -58,5 +59,4 @@ public sealed class UploaderFunctions
         await response.WriteAsJsonAsync(responseMetadataSaver);
         return response;
     }
-    
 }

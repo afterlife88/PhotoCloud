@@ -4,6 +4,8 @@
     "ServiceBusConnectionString": "Endpoint=sb://avanade-workshop.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=/rocjmlXppzScWJqYClMDdgKV8H0vLYLK4XTS+SHxLM="
   },
   "Values": {
+    "MetadataServiceEndpointUrl": "https://metadata-saver-func.azurewebsites.net/api/saveMetadata",
+    "LocatorServiceEndpointUrl": "https://locator-func.azurewebsites.net/api/extractLocation",
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated"
   }
