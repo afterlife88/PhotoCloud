@@ -1,6 +1,6 @@
 # PhotoCloud
 
-Internal Avanade DK workshop around service bus, async microservices communication, pubsub and queue functionality  
+Workshop around service bus, async microservices communication, pubsub and queue functionality  
 
 ## Requirements 
 You should develop a solution to upload a photo and share it with a list of friends.
