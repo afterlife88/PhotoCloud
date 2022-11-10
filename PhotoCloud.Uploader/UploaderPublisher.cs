@@ -37,7 +37,8 @@ public sealed class UploaderPublisher
         var serviceBusClient = new ServiceBusClient(_configuration.GetConnectionString("ServiceBusConnectionString"));
 
         // TODO: 
-        // Find from msdn documentation how to create a message and sends to photos topic
+        // Follow documentation bellow
+        // https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/servicebus/Azure.Messaging.ServiceBus/samples/Sample01_SendReceive.md
         // You should send a message with the following structure: { "pictureId": "pictureId", "blobUrl": "blobUrl", "author": "author", "title": "title" }
         // Use PhotoMessage class to serialize the message
         // Create instance of PhotoMessage class and set the properties, use author and title from the query string
